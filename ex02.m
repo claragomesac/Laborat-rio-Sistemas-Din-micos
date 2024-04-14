@@ -1,18 +1,23 @@
-%% Laboratório de Sistemas dinâmicos
-% Prática 01
-% Data: 11/03/2024
-% Autores: Ana Clara Gomes & João Vitor Barbosa
-
-
-%%Limpar Workspace
-clear all;
-close all;
 clc;
+close all;
 
-%%
-% Script Prática 1
+k = 1; %valor de k
+t = [0:0.1:10]; %vetor de tempo
+Ts = tf(10*k,[1 20 k])
+step(Ts,t); %aplicando o degrau 
+hold on
 
-%% Ex. 02
-t = -10:0.1:10; %Intervalo de t
-X = -exp(-2*t).*cos(2*pi*3*t+0) %Função
-plot(t,X);xlabel('t');ylabel('X(t)');title('Gráfico Questão 2'); %Rótulos do gráfico
+k1 = 10;%valor de k
+t1 = [0:0.1:10];%vetor de tempo
+Ts1 = tf(10*k1,[1 20 k1])
+step(Ts1,t1);%aplicando o degrau 
+hold on
+
+k2 = 100;%valor de k
+t2 = [0:0.1:10]; %vetor de tempo
+Ts2 = tf(10*k2,[1 20 k2])
+step(Ts2,t2);%aplicando o degrau 
+hold on
+
+
+

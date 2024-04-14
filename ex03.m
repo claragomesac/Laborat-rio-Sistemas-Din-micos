@@ -1,18 +1,30 @@
-%% Laboratório de Sistemas dinâmicos
-% Prática 01
-% Data: 11/03/2024
-% Autores: Ana Clara Gomes & João Vitor Barbosa
-
-
-%%Limpar Workspace
-clear all;
-close all;
 clc;
+close all;
 
-%%
-% Script Prática 1
+t1 = [0:0.1:10]; %vetor de tempo.
+Cs = tf(1,[1 1]);
 
-%% Ex. 03
-t = 0:0.1/500:5 %intervalo de t
-x = cos(t) .* sin(20*t) %função
-plot(t,x);xlabel('t');ylabel('x(t)');title('Gráfico Questão 3'); %Rótulos do gráfico
+x = 0.1;
+num=[x];
+den=[1 x];
+Gs=tf(num,den) ;
+Hs = Cs*Gs
+y= step(Hs,t1);
+
+x1 = 1;
+num1=[x1];
+den1=[1 x1];
+Gs1=tf(num1,den1); 
+Hs1 = Cs*Gs1
+y1= step(Hs1,t1);
+
+x2 = 10;
+num2=[x2];
+den2=[1 x2];
+Gs2=tf(num2,den2); 
+Hs2 = Cs*Gs2
+y2= step(Hs2,t1);
+
+plot(t1,y1,t1,y2,t1,y3); xlabel('Tempo(s)');ylabel('Amplitude');title('Resposta ao degrau'); grid('on');
+ %plot do gráfico integrando todas as curvas.
+grid('on');
