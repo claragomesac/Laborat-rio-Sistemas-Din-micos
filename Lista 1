@@ -13,6 +13,7 @@ clc;
 % Script Prática 1
 
 %% Ex. 01 (a)
+
 %Declarando as matrizes A e B
 A = [1 1 6; 5 -2 1; -8 2 -3]
 B = [2 9; -5 -1; 9 2]
@@ -34,6 +35,7 @@ else
 end
 
 %% Ex. 01 (b)
+
 fprintf('Para a matriz A \n')
 [linha, coluna] = find(A==2)
 
@@ -41,6 +43,7 @@ fprintf('Para a matriz B \n')
 [linha1, coluna1] = find(B==2)
 
 %% Ex. 01 (c)
+
 fprintf('Negativos em A \n')
 Negativo_A = A(A<0)
 [linha2, coluna2] = find(A<0)
@@ -49,61 +52,20 @@ fprintf('Negativos em B \n')
 Negativo_B = B(B<0)  
 [linha3, coluna3] = find(B<0)
 
-
-%% Laboratório de Sistemas dinâmicos
-% Prática 01
-% Data: 11/03/2024
-% Autores: Ana Clara Gomes & João Vitor Barbosa
-
-
-%%Limpar Workspace
-clear all;
-close all;
-clc;
-
-%%
-% Script Prática 1
-
 %% Ex. 02
+
 t = -10:0.1:10; %Intervalo de t
 X = -exp(-2*t).*cos(2*pi*3*t+0) %Função
 plot(t,X);xlabel('t');ylabel('X(t)');title('Gráfico Questão 2'); %Rótulos do gráfico
 
-
-%% Laboratório de Sistemas dinâmicos
-% Prática 01
-% Data: 11/03/2024
-% Autores: Ana Clara Gomes & João Vitor Barbosa
-
-
-%%Limpar Workspace
-clear all;
-close all;
-clc;
-
-%%
-% Script Prática 1
-
 %% Ex. 03
+
 t = 0:0.1/500:5 %intervalo de t
 x = cos(t) .* sin(20*t) %função
 plot(t,x);xlabel('t');ylabel('x(t)');title('Gráfico Questão 3'); %Rótulos do gráfico
 
-%% Laboratório de Sistemas dinâmicos
-% Prática 01
-% Data: 11/03/2024
-% Autores: Ana Clara Gomes & João Vitor Barbosa
-
-
-%%Limpar Workspace
-clear all;
-close all;
-clc;
-
-%%
-% Script Prática 1
-
 %% Ex. 04
+
 %Para a fração a)
 fprintf('Letra A)')
 [R,P,K] = residue([6 6],[1 4.59 0.58 0])
