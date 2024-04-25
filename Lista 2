@@ -12,25 +12,15 @@ clc;
 % Script Prática 2
 
 %Exercício 1
+
 syms a b c d; %variáveis simbólicas
 M = [a b; c d]; % matriz 
 x = det(M); %determinante 
 y = inv(M); %inversa da matriz
 z = sum(diag(M)); %traço
-%% Laboratório de Sistemas dinâmicos
-% Prática 02
-% Data: 25/03/2024
-% Autores: Ana Clara Gomes & João Vitor Barbosa
-
-%%Limpar Workspace
-clear all;
-close all;
-clc;
-
-%%
-% Script Prática 2
 
 %Exercício 2
+
 n = 0:10;
  %Letra a)
  x_a = (-1).^n; %função a)
@@ -44,40 +34,16 @@ n = 0:10;
  subplot(6,1,5); stairs(n,x_b); ylabel('x_b[n]');xlabel('Amostra');
  subplot(6,1,6); bar(n,x_b); ylabel('x_b[n]');xlabel('Amostra');
 
-%% Laboratório de Sistemas dinâmicos
-% Prática 02
-% Data: 25/03/2024
-% Autores: Ana Clara Gomes & João Vitor Barbosa
-
-%%Limpar Workspace
-clear all;
-close all;
-clc;
-
-%%
-% Script Prática 2
-
 %Exercício 3
+
 y = zeros(1,4);
 y(1)= 10;
 for n = 2:4
     y(n) = -(2 - y(n-1))/2 
 end
 
-%% Laboratório de Sistemas dinâmicos
-% Prática 02
-% Data: 25/03/2024
-% Autores: Ana Clara Gomes & João Vitor Barbosa
-
-%%Limpar Workspace
-clear all;
-close all;
-clc;
-
-%%
-% Script Prática 2
-
 %Exercício 4
+
 y = zeros(1,10);
 y(1) = 2;
 y(2) = 1;
