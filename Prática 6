@@ -1,0 +1,149 @@
+%% Laboratório de Sistemas dinâmicos
+% Prática 04
+% Data: 29/04/2024
+% Autores: Ana Clara Gomes & João Vitor Barbosa
+
+
+%%Limpar Workspace
+clear all;
+close all;
+clc;
+
+%%
+% Script Prática 6
+
+%% Exercicio 1 a)
+
+%{
+v_s = R*i_s
+i_s = C dv_s/dt
+i_s = Cs*v_s
+v_s = (1/Cs)*i_s
+Vr+Vc-Ve=0
+R*i_t+Vc_t-Ve_t=0
+R*C*(dVc_t)/dt)+Vc_t-Ve_t=0
+s*R*C*Vc_s+Vc_s=Ve-s
+
+Manipulando a equação:
+
+(Vc_s/Ve_s) = tf(1, [R*C 1])
+
+%}
+
+%% Exercicio 1 b)
+
+R = 100;
+C = 10^(-6);
+Ts = tf(1,[R*C 1])
+step(Ts);grid('on');
+
+%% Exercicio 1 c)
+
+R2 = 200;
+Hs = tf(1,[R2*C 1])
+step(Ts);grid('on');
+%Análise: como a constante de tempo aqui é maior, o gráfico sobre mais
+%rápido
+
+%##############################################################
+
+%% Exercicio 1 d)
+
+%{
+Dedudzir fórmula de I_s/V_s
+
+%}
+
+%% Exercicio 1 e)
+
+Rd = 100;
+Cd = 10^(-6);
+Gs = tf([Cd 0],[Rd*Cd 1])
+step(Gs);grid('on');
+
+%% Exercicio 1 f)
+
+%Comparar os resultados gráficos e discutir as diferenças
+
+%% Exercicio 1 g)
+
+%Usar teorema do valor final
+
+%% Exercicio 1 h)
+
+%% Exercicio 1 i)
+
+A=[-1/(R*C)];
+B=[1/(R*C)];
+C=[1;-1/R];
+D=[0;1/R];
+Gss = ss(A,B,C,D);
+figure(4);
+step(Gss);
+xlabel('t');
+ylabel('y');
+grid on;
+
+%% Exercicio 2 a) 
+
+%{
+Determinar I_s/Va
+ta nos slides
+
+%}
+
+%% Exercicio 2 b)
+
+R = 100;
+L = 10^(-6);
+G2s = tf(1,[L R])
+step(G2s);grid('on');
+%comentar saída
+
+%% Exercicio 2 c)
+
+%{
+Dedudzir fórmula de VL_s/V_s
+Como V_s = Ls*I(s);
+Logo, tem-se que:
+G4(s)= VL(s)/Va(s) = Ls/Ls+R
+%}
+
+%% Exercicio 2 d)
+
+R = 100;
+L = 10^(-6);
+G2s = tf([L 0],[L R])
+step(G2s);grid('on');
+%camentar saída
+
+
+%% Exercicio 2 e)
+
+%Comentar o que está acontecendo com a tensão e a corrente em cada
+%cada uma das letras que ele pediu
+
+%% Exercicio 2 f)
+
+%Usar teorema do valor final e comparar letras B e D
+%Depois, comparar com a número 1.
+%Letra L)
+A=[-R/L];
+B=[1/L];
+C=[-R;R;1];
+D=[1;0;0];
+Gss2 = ss(A,B,C,D);
+figure(3);
+step(Gss2);
+xlabel('t');
+ylabel('y');
+grid on;
+
+%% Exercicio 3 a)
+
+R = 200;
+R2 = 200;
+C = 10.^-6;
+L = 10.^-6;
+G2s = tf([C 0],[L*C R*C 1])
+step(G2s*5);grid('on');
